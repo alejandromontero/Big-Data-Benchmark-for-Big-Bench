@@ -14,6 +14,7 @@ showGlobalHelp () {
   echo "Usage: `basename $0` module [options]"
   echo
   echo "Script options:"
+  echo -e "-C\tconfig file to use full path (default: $BIG_BENCH_HOME/$BIG_BENCH_CONF_DIR/userSettings.conf)"
   echo -e "-d\tdatabase to use (default: $BIG_BENCH_DEFAULT_DATABASE)"
   echo -e "-D\tquery part to debug"
   echo -e "-e\tengine to use (default: $BIG_BENCH_DEFAULT_ENGINE)"
@@ -115,7 +116,8 @@ find "$BIG_BENCH_HOME" -name '*.jar' -exec chmod 755 {} +
 ## ===================================================
 ## source user configurable settings
 ## ===================================================
-USER_SETTINGS="$BIG_BENCH_CONF_DIR/userSettings.conf"
+# Only set USER_SETTINGS if not previously defined (via option -C or ENV)
+[! "$USER_SETTINGS" ] && USER_SETTINGS="$BIG_BENCH_CONF_DIR/userSettings.conf"
 if [ ! -f "$USER_SETTINGS" ]
 then
   echo "User settings file $USER_SETTINGS not found"
@@ -143,9 +145,13 @@ shift
 export LIST_OF_USER_OPTIONS="$@"
 
 # parse remaining options
-while getopts ":d:D:e:f:hm:p:q:s:t:v:w:y:z:abcx1234567" OPT; do
+while getopts ":C:d:D:e:f:hm:p:q:s:t:v:w:y:z:abcx1234567" OPT; do
   case "$OPT" in
     # script options
+    C)
+      #echo "-C was triggered, Parameter: $OPTARG" >&2
+      USER_DATABASE="$OPTARG"
+    ;;
     d)
       #echo "-d was triggered, Parameter: $OPTARG" >&2
       USER_DATABASE="$OPTARG"
