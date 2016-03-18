@@ -150,7 +150,7 @@ while getopts ":C:d:D:e:f:hm:p:q:s:t:v:w:y:z:abcx1234567" OPT; do
     # script options
     C)
       #echo "-C was triggered, Parameter: $OPTARG" >&2
-      USER_DATABASE="$OPTARG"
+      USER_SETTINGS="$OPTARG"
     ;;
     d)
       #echo "-d was triggered, Parameter: $OPTARG" >&2
