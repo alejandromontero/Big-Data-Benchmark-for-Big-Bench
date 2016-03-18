@@ -181,6 +181,7 @@ as well as a specific help for each module
 * -e: This option chooses which binary will be used for the benchmark. (default: $BIG_BENCH_DEFAULT_ENGINE)
 * -f: The scale factor for PDGF. It is used by the dataGen module. (default: $BIG_BENCH_DEFAULT_SCALE_FACTOR)
 * -h: Show help
+* -C: Supply and alternate config file (default: $BIG_BENCH_CONF_DIR/userSettings.conf)
 * -m: The map tasks used for data generation. It is used by the dataGen module. (default: $BIG_BENCH_DEFAULT_MAP_TASKS)
 * -p: Defines the benchmark phase to use (default: $BIG_BENCH_DEFAULT_BENCHMARK_PHASE)
 * -q: Defines the query number to be executed
