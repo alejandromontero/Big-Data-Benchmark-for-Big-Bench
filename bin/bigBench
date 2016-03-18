@@ -14,7 +14,7 @@ showGlobalHelp () {
   echo "Usage: `basename $0` module [options]"
   echo
   echo "Script options:"
-  echo -e "-C\tconfig file to use full path (default: $BIG_BENCH_HOME/$BIG_BENCH_CONF_DIR/userSettings.conf)"
+  echo -e "-C\tconfig file to use full path (default: $BIG_BENCH_CONF_DIR/userSettings.conf)"
   echo -e "-d\tdatabase to use (default: $BIG_BENCH_DEFAULT_DATABASE)"
   echo -e "-D\tquery part to debug"
   echo -e "-e\tengine to use (default: $BIG_BENCH_DEFAULT_ENGINE)"
