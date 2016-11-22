@@ -102,6 +102,9 @@ export BIG_BENCH_DATAGEN_STAGE_LOG="$BIG_BENCH_LOGS_DIR/dataGeneration.log"
 #do not touch lines below, unless you are sure you need to tamper with that
 export BIG_BENCH_DATAGEN_CORE_SITE="$BIG_BENCH_HADOOP_CONF/core-site.xml"
 export BIG_BENCH_DATAGEN_HDFS_SITE="$BIG_BENCH_HADOOP_CONF/hdfs-site.xml"
+echo "BIGBENCH CONFS"
+echo "${BIG_BENCH_DATAGEN_CORE_SITE}"
+echo "${BIG_BENCH_DATAGEN_HDFS_SITE}"
 
 ## ===================================================
 ## END OF SETTINGS
